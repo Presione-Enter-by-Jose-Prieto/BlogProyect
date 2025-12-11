@@ -24,6 +24,7 @@ return new class extends Migration
             $table->foreignId('post_id')->constrained()->cascadeOnDelete();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->tinyInteger('rating'); // 1 al 5
+            $table->unique(['post_id', 'user_id']); // Un usuario solo puede calificar una vez por post
             $table->timestamps();
         });
     }
@@ -34,5 +35,6 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('comments');
+        Schema::dropIfExists('ratings');
     }
 };
