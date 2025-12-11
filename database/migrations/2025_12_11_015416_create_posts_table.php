@@ -18,7 +18,8 @@ return new class extends Migration
             $table->text('content');
             $table->text('excerpt');
             $table->enum('status',['draft, published, archived'])->default('draft');
-            $table->foreignId('author_id')->constrained('users')->onDelete('cascade');
+            $table->foreignId('category_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('author_id')->constrained('users')->cascadeOnDelete();
             $table->timestamps();
         });
     }
