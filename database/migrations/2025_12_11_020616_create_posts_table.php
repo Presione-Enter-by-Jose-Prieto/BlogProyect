@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('slug');
             $table->text('content');
             $table->text('excerpt');
-            $table->enum('status',['draft, published, archived'])->default('draft');
+            $table->enum('status', ['draft', 'published', 'archived'])->default('draft');
             $table->foreignId('category_id')->constrained()->cascadeOnDelete();
             $table->foreignId('author_id')->constrained('users')->cascadeOnDelete();
             $table->timestamps();

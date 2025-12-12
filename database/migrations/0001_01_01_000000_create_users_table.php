@@ -11,6 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
+        Schema::create('roles', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->timestamps();
+        });
+        
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
@@ -19,12 +25,6 @@ return new class extends Migration
             $table->foreignId('role_id')->constrained()->cascadeOnDelete();
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
-            $table->timestamps();
-        });
-
-        Schema::create('roles', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
             $table->timestamps();
         });
 
