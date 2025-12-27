@@ -19,7 +19,15 @@
             </style>
         @endif
     </head>
-    <body class="m-0 p-0">
-        @yield('content')
+    <body class="m-0 p-0 bg-[#F8F9FA] flex flex-col items-center">
+        <div class="min-w-[1600px] max-w-[1600px] min-h-screen bg-white">
+            <x-header />
+            {{-- Divisor --}}
+            <div class="h-6"></div>
+            {{-- Contenido --}}
+            <div class="px-11">
+                @yield('content')
+            </div>
+        </div>
     </body>
 </html>
