@@ -33,8 +33,8 @@ class LoginController extends Controller
         $data['password'] = Hash::make($data['password']);
 
         User::create($data);
-
-        return redirect()->route('login-form')->with('success', 'Usuario registrado exitosamente');
+        Auth::attempt($request->only('email', 'password'));
+        return redirect()->route('home.index')->with('success', 'Bienvenido a la plataforma');
     }
 
     public function login(Request $request)
@@ -46,7 +46,7 @@ class LoginController extends Controller
 
         if (Auth::attempt($data)) {
             $request->session()->regenerate();
-            return redirect()->intended('/')->with('success', 'Sesión iniciada');
+            return redirect()->route('home.index')->with('success', 'Sesión iniciada');
         }
 
         return back()->withErrors(['email' => 'Las credenciales son inválidas'])->onlyInput('email');
