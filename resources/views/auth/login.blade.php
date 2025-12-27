@@ -67,7 +67,7 @@
                 ¿No tienes una cuenta?
                 <a href="{{ route('register-form') }}" class="text-[#2b467c] hover:underline">Registrarme</a><br>
                 Regresar a
-                <a href="" class="text-[#2b467c] hover:underline">Publicaciones</a>
+                <a href="{{ route('home.index') }}" class="text-[#2b467c] hover:underline">Publicaciones</a>
             </div>
         </div>
     </section>
