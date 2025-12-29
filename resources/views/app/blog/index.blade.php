@@ -8,8 +8,7 @@
         </div>
     @endif
     <h2 class="text-xl font-bold mb-4">Bienvenido al Blog</h2>
-    <p class="mb-2">Este es el contenido principal del blog.</p>
-    <div>
+    <div class="w-[75%]">
         @foreach ($posts as $post)
             <div class="p-2 border mb-2">
                 <div class="flex flex-row gap-2 items-center">
@@ -20,5 +19,8 @@
                 <p class="text-sm text-gray-800">{{ $post->author->name ?? '—' }}</p>
             </div>
         @endforeach
+    </div>
+    <div class="w-[25%]"> 
+
     </div>
 @endsection
