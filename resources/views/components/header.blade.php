@@ -2,7 +2,7 @@
 <div class="w-full flex justify-between items-center px-11 py-2">
     <div>
         <a href="{{ route('home.index') }}">
-            <h1 class="text-2xl font-semibold" style="font-family:'Linux Libertine','Georgia';">¿Esta todo bien?</h1>
+            Volver al Inicio
         </a>
     </div>
 

@@ -2,9 +2,10 @@
 @section('title', 'Crear una publicación')
 
 @section('content')
-    <h1 class="text-xl font-semibold mb-4">Crear una nueva publicación</h1>
     <div class="w-full">
         <div class="w-[75%]">
+                <h2 class="text-2xl mb-4 pb-1 border-b border-[#9FA6AD]"
+                style="font-family:'Linux Libertine','Georgia';">Bienvenido a la pagina principal: {{ Auth::user()->name }}</h2>
             <form action="{{ route('posts.store') }}" method="POST">
                 @csrf
                 <div>
