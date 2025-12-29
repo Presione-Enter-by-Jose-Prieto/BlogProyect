@@ -9,11 +9,11 @@
     <div>
         <ul class="flex flex-row gap-2">
             @if (Auth::check())
-                <li><a href="{{ route('posts.create') }}">Crear una publicación</a></li>
+                <li><a class="text-[#36C] hover:underline" href="{{ route('posts.create') }}">Crear una publicación</a></li>
                 <li>{{ Auth::user()->name }}</li>
             @else
-                <li><a href="{{ route('posts.create') }}">Crear una publicación</a></li>
-                <li><a href="{{ route('login-form') }}">Acceder</a></li>
+                <li><a class="text-[#36C] hover:underline" href="{{ route('posts.create') }}">Crear una publicación</a></li>
+                <li><a class="text-[#36C] hover:underline" href="{{ route('login-form') }}">Acceder</a></li>
             @endif
         </ul>
     </div>
