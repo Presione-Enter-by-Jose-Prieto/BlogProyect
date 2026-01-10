@@ -50,7 +50,13 @@ class PostController extends Controller
             $categoryId = $data['category_id'] ?? null;
         }
 
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('posts', 'public');
+            $data['image'] = $imagePath;
+        }
+
         $post = Post::create([
+            'image' => $data['image'] ?? null,
             'title' => $data['title'],
             'slug' => Str::slug($data['title']) . '-' . time(),
             'content' => $data['content'],
@@ -67,7 +73,8 @@ class PostController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $post = Post::findOrFail($id);
+        return view('app.posts.show', compact('post'));
     }
 
     /**
