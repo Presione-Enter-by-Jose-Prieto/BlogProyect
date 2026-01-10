@@ -68,4 +68,27 @@
         >Crear Publicación</button>
     </form>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const ids = ['content', 'excerpt'];
+
+        ids.forEach(id => {
+            const el = document.getElementById(id);
+            if (!el) return;
+
+            el.style.overflow = 'hidden';
+            el.style.resize = 'none';
+
+            const autoResize = () => {
+                el.style.height = 'auto';
+                el.style.height = el.scrollHeight + 'px';
+            };
+
+            el.addEventListener('input', autoResize);
+            autoResize();
+        });
+    });
+</script>
+
 @endsection
