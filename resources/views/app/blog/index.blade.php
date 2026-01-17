@@ -10,7 +10,6 @@
         </div>
     @endif
     
-    <x-welcome-card :posts="$posts"/>
 
     <div class="w-full">
         <div class="columns-2 gap-4 mb-20">
